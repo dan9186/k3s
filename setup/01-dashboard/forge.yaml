@@ -10,3 +10,6 @@ steps:
   token:
     help: obtain the bearer token
     cmd: kubectl -n kubernetes-dashboard describe secret admin-user-token | grep '^token'
+  remove:
+    help: remove the dashboard
+    cmd: kubectl delete ns kubernetes-dashboard
