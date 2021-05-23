@@ -1,0 +1,12 @@
+project:
+  name: k8s_dashboard
+steps:
+  install:
+    help: install the dashboard
+    cmds:
+      - kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.2.0/aio/deploy/recommended.yaml
+      - kubectl apply -f dashboard.admin-user.yml
+      - kubectl apply -f dashboard.admin-user-role.yml
+  token:
+    help: obtain the bearer token
+    cmd: kubectl -n kubernetes-dashboard describe secret admin-user-token | grep '^token'
