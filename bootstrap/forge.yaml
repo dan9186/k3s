@@ -1,0 +1,8 @@
+project:
+  name: bootstrap
+steps:
+  download:
+    help: download the os
+    cmds:
+      - curl -L https://github.com/hypriot/image-builder-rpi/releases/download/v1.12.3/hypriotos-rpi-v1.12.3.img.zip -o hypriotos.zip
+      - unzip hypriotos.zip
