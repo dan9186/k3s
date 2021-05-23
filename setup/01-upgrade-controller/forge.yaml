@@ -1,0 +1,11 @@
+project:
+  name: upgrade-controller
+steps:
+  install:
+    help: install the upgrade controller
+    cmds:
+      - kubectl apply -f https://github.com/rancher/system-upgrade-controller/releases/download/v0.6.2/system-upgrade-controller.yaml
+      - >
+        for n in $(kubectl get nodes -o custom-columns=NAME:.metadata.name | tail -n +2); do
+          kubectl label node --overwrite $n k3s-upgrade=true
+        done
