@@ -3,6 +3,8 @@ project:
 steps:
   download:
     help: download the os
+    envs:
+      HYPRIOT_VERSION: v1.12.3
     cmds:
-      - curl -L https://github.com/hypriot/image-builder-rpi/releases/download/v1.12.3/hypriotos-rpi-v1.12.3.img.zip -o hypriotos.zip
+      - curl -L https://github.com/hypriot/image-builder-rpi/releases/download/v1.12.3/hypriotos-rpi-$HYPRIOT_VERSION.img.zip -o hypriotos.zip
       - unzip hypriotos.zip
