@@ -4,6 +4,9 @@ steps:
   restart:
     help: restart the cluster
     cmd: ansible-playbook restart.yml -i inventory/hosts.ini
+  reset:
+    help: reset the cluster
+    cmd: ansible-playbook reset.yml -i inventory/hosts.ini
   shutdown:
     help: shutdown the cluster
     cmd: ansible all -i inventory/hosts.ini -a "shutdown now" -b

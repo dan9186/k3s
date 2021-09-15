@@ -8,3 +8,9 @@ steps:
     cmds:
       - curl -L https://github.com/hypriot/image-builder-rpi/releases/download/v1.12.3/hypriotos-rpi-$HYPRIOT_VERSION.img.zip -o hypriotos.zip
       - unzip hypriotos.zip
+
+  clean:
+    help: cleanup the downloaded files
+    cmds:
+      - rm -f hypriotos.zip
+      - rm -f hypriotos-rpi-v1.12.3.img
