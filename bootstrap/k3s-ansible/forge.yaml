@@ -1,6 +1,9 @@
 project:
   name: k3s-ansible
 steps:
+  install:
+    help: setup the cluster
+    cmd: ansible-playbook site.yml -i inventory/hosts.ini
   restart:
     help: restart the cluster
     cmd: ansible-playbook restart.yml -i inventory/hosts.ini
