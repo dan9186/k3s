@@ -4,7 +4,7 @@ steps:
   install:
     help: install the upgrade controller
     envs:
-      UPGRADE_CTRL_VERSION: v0.6.2
+      UPGRADE_CTRL_VERSION: v0.7.5
     cmds:
       - kubectl apply -f https://github.com/rancher/system-upgrade-controller/releases/download/$UPGRADE_CTRL_VERSION/system-upgrade-controller.yaml
       - >
