@@ -11,3 +11,9 @@ steps:
         for n in $(kubectl get nodes -o custom-columns=NAME:.metadata.name | tail -n +2); do
           kubectl label node --overwrite $n k3s-upgrade=true
         done
+      - kubectl apply -f plans.yaml
+  status:
+    help: show plan status
+    cmds:
+      - kubectl -n system-upgrade get plans -o yaml
+      - kubectl -n system-upgrade get jobs -o yaml
