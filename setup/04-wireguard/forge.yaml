@@ -1,0 +1,6 @@
+project:
+  name: sample-forge-project
+steps:
+  build:
+    help: build the project
+    cmd: echo "run the build"

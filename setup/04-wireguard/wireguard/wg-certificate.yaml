@@ -1,0 +1,13 @@
+apiVersion: cert-manager.io/v1alpha2
+kind: Certificate
+metadata:
+  name: wg-hessho-me
+  namespace: default
+spec:
+  secretName: wg-hessho-me-tls
+  issuerRef:
+    name: letsencrypt-prod
+    kind: ClusterIssuer
+  commonName: wg.hessho.me
+  dnsNames:
+  - wg.hessho.me
